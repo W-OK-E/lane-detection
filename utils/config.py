@@ -4,15 +4,15 @@
     training utility.
 """
 # data constants, PC-specific (!absolute paths)
-tr_root = '/Users/nick/Desktop/train_set/clips/'
+tr_root = '/kaggle/input/tusimple/TUSimple/train_set/clips'
 tr_subdirs = ['0601', '0531', '0313-1', '0313-2']
-tr_flabels = ['/Users/nick/Desktop/train_set/label_data_0601.json',
-           '/Users/nick/Desktop/train_set/label_data_0531.json',
-           '/Users/nick/Desktop/train_set/label_data_0313.json']
+tr_flabels = ['/kaggle/input/tusimple/TUSimple/train_set/label_data_0601.json',
+           '/kaggle/input/tusimple/TUSimple/train_set/label_data_0531.json',
+           '/kaggle/input/tusimple/TUSimple/train_set/label_data_0313.json']
 
-ts_root = '/home/nick/datasets/tu-simple-dataset/test_set/clips/'
+ts_root = '/kaggle/input/tusimple/TUSimple/test_set/clips'
 ts_subdirs = ['0601', '0531', '0530']
-ts_flabels = ['/home/nick/datasets/tu-simple-dataset/test_set/test_label.json']
+ts_flabels = ['/kaggle/input/tusimple/TUSimple/test_label.json']
 
 data_dir = 'visual-results/'
 
