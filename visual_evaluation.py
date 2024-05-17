@@ -35,17 +35,17 @@ if __name__ == '__main__':
     tu_dataloader = DataLoader(tu_test_dataset, batch_size=2, shuffle=True)
     model.eval()
     with torch.no_grad():
-
+        count = 0
         for batchno, (frames, targets) in enumerate(tu_dataloader):
             frames = [f.to(device) for f in frames]
-
+            count += 1
             output = model(frames)
             targets_ = targets.squeeze(1).long().to(device)
 
             print("Loss:", nn.CrossEntropyLoss(weight=torch.FloatTensor(cc.loss_weights).to(device))(output, targets_))
             output = (torch.sigmoid(output[:, 1, :, :]) > .5).float()
-            print("Output max:", output.max().item(), "Output mean", output.mean().item())
-            print("Pixel lane points:", targets.sum().item(), output.sum().item())
+            # print("Output max:", output.max().item(), "Output mean", output.mean().item())
+            # print("Pixel lane points:", targets.sum().item(), output.sum().item())
             # print inputs and target
             for i in range(2):
                 samples = []
@@ -63,3 +63,5 @@ if __name__ == '__main__':
                 # plt.show()
                 show_plain_images(samples + [targets[i]] + [output[i].unsqueeze(0)], len(samples) + 2, save=True,
                                   fname=f'visual_{batchno}-{i}.png')
+            if(count == 20):
+                break
