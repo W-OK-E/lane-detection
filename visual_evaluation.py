@@ -61,5 +61,5 @@ if __name__ == '__main__':
                 o = samples[0].permute(1, 2, 0).cpu().numpy() + targets[i].permute(1, 2, 0).cpu().numpy()
                 # plt.imshow(o.astype(np.float32))
                 # plt.show()
-                show_plain_images(samples + [targets[i]] + [output[i].unsqueeze(0)], len(samples) + 2, save=False,
+                show_plain_images(samples + [targets[i]] + [output[i].unsqueeze(0)], len(samples) + 2, save=True,
                                   fname=f'visual_{batchno}-{i}.png')
