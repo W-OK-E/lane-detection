@@ -64,7 +64,7 @@ if __name__ == '__main__':
                 #show_plain_images(samples + [targets[i]] + [output[i].unsqueeze(0)], len(samples) + 2, save=True,
                                   #fname=f'visual_{batchno}-{i}.png')
                 #This only displays the target segmentation and the Output Segmentation
-                show_plain_images(samples[-1]+[targets[i]] + [output[i].unsqueeze(0)],3, save=True,
+                show_plain_images([samples[-1]]+[targets[i]] + [output[i].unsqueeze(0)],3, save=True,
                                   fname=f'visual_{batchno}-{i}.png')
             if(count == 20):
                 break
