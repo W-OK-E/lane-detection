@@ -14,7 +14,7 @@ ts_root = '/kaggle/input/tusimple/TUSimple/test_set/clips'
 ts_subdirs = ['0601', '0531', '0530']
 ts_flabels = ['/kaggle/input/tusimple/TUSimple/test_label.json']
 
-data_dir = 'visual-results/'
+data_dir = '/kaggle/working/visual-results/'
 
 
 class Configs:
