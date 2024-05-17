@@ -33,7 +33,7 @@ if __name__ == '__main__':
     # create dataloader
     tu_test_dataset = TUSimpleDataset(config.ts_root, config.ts_subdirs, config.ts_flabels)
     tu_dataloader = DataLoader(tu_test_dataset, batch_size=2, shuffle=True)
-    model.train()
+    model.eval()
     with torch.no_grad():
 
         for batchno, (frames, targets) in enumerate(tu_dataloader):
