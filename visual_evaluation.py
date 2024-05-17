@@ -59,8 +59,8 @@ if __name__ == '__main__':
                 # print("Single output shape:", output[i][1, :, :].unsqueeze(0).size())
                 # o = cv2.addWeighted(samples[-1].permute(1, 2, 0).numpy(), 1., targets[i].permute(1, 2, 0).numpy().repeat(3, axis=2), 1, 0)
                 o = samples[0].permute(1, 2, 0).cpu().numpy() + targets[i].permute(1, 2, 0).cpu().numpy()
-                # plt.imshow(o.astype(np.float32))
-                # plt.show()
+                plt.imshow(o.astype(np.float32))
+                plt.show()
                 show_plain_images(samples + [targets[i]] + [output[i].unsqueeze(0)], len(samples) + 2, save=True,
                                   fname=f'visual_{batchno}-{i}.png')
             if(count == 20):
